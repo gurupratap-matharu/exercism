@@ -25,11 +25,9 @@ class School(object):
         1. Grade wise
         2. Name wise
         """
-        _lst = []
-        for grade, students in sorted(self.students_enrolled.items()):
-            for student in sorted(students):
-                _lst.append(student)
-        return _lst
+
+        grades = sorted(self.students_enrolled.keys())
+        return [student for grade in grades for student in self.grade(grade)]
 
     def grade(self, grade_number):
         return sorted(self.students_enrolled[grade_number])
