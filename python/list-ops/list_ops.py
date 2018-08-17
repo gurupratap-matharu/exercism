@@ -1,9 +1,9 @@
 def append(xs, ys):
     """
-    Appends the elements of ys into xs and returns xs
+    Adds all the elements of xs and ys and returns a combined list.
     """
-    xs.extend(ys)
-    return xs
+
+    return xs + ys
 
 
 def concat(lists):
@@ -18,9 +18,10 @@ def concat(lists):
         if type(chunk) == list:  # to check list inside a list
 
             for elem in chunk:
-                lst.append(elem)
+                # lst.append(elem)
+                lst += [elem]
         else:
-            lst.append(chunk)
+            lst += [chunk]
 
     return lst
 
@@ -29,19 +30,36 @@ def filter_clone(function, xs):
     """
     Elements from xs are filtered out only for which the output of function holds True.
     """
-    return [elem for elem in xs if function(elem)]
+    filtered_lst = []  # We'll store our results here.
+
+    for elem in xs:
+        if function(elem):
+            filtered_lst += [elem]
+
+    return filtered_lst
 
 
 def length(xs):
     """Returns the length of the list"""
-    return len(xs)
+
+    if xs:                      # To check if list is not empty.
+        for count, elem in enumerate(xs):
+            pass
+        return count + 1
+    else:
+        return 0
 
 
 def map_clone(function, xs):
     """
     Sends every element xs to the function and returns a processed list.
     """
-    return [function(elem) for elem in xs]
+    map_cloned_lst = []
+
+    for elem in xs:
+        map_cloned_lst += [function(elem)]
+
+    return map_cloned_lst
 
 
 def foldl(function, xs, acc):
