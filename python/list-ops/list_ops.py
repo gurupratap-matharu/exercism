@@ -18,7 +18,6 @@ def concat(lists):
         if type(chunk) == list:  # to check list inside a list
 
             for elem in chunk:
-                # lst.append(elem)
                 lst += [elem]
         else:
             lst += [chunk]
@@ -65,36 +64,53 @@ def map_clone(function, xs):
 def foldl(function, xs, acc):
     """
     To simulate reduce functionality. Start from left and take 2 elements at a time.
+    
+    For example:
+    
+    foldl(f, [a, b, c], z) == f(f(f(z, a), b), c)
     """
     if xs:
-        result = function(xs[0], xs[1])
+        result = function(acc, xs[0])
 
-        for i in range(2, len(xs)):
+        for i in range(1, len(xs)):
             result = function(result, xs[i])
 
-        return function(result, acc)
+        return result
     else:
         return acc
 
 
 def foldr(function, xs, acc):
-    """Similar to foldl function but here we start from right and take 2 elements at a time.
     """
+    Similar to foldl function but here we start from right and take 2 elements at a time.
+     
+    For example:
+   
+    foldr(f, [a, b, c], z) == f(a, f(b, f(c, z)))
+    """
+    span = -(len(xs) + 1)
+    
     if xs:
-        result = function(xs[-1], xs[-2])
-
-        for i in range(3, len(xs) + 1):
-            result = function(result, xs[-i])
-
-        result = function(acc, result)
-        if type(result) == str:
-            return result[::-1]  # I do this to pass the unittest. I think answer should be a reverse string though! like '!msicrexe'
-        else:
-            return result
+        result = function(xs[-1], acc)
+        for i in range(-2, span, -1): # We run the list in the reverse direction.
+            result = function(xs[i], result)
+        return result
     else:
         return acc
 
 
 def reverse(xs):
-    """Returns the reverse of a list. We can achieve this by list slicing"""
-    return xs[::-1]
+    """Returns the reverse of a list. """
+    if xs:
+
+        reversed_lst = [] # We'll store the reversed list here.
+        span = -(len(xs) + 1) # We run the list in the reverse direction. 
+
+        for i in range(-1, span, -1):
+            reversed_lst += [xs[i]]
+    
+        return reversed_lst 
+    else:
+        return []
+
+
