@@ -64,53 +64,51 @@ def map_clone(function, xs):
 def foldl(function, xs, acc):
     """
     To simulate reduce functionality. Start from left and take 2 elements at a time.
-    
+
     For example:
-    
+
     foldl(f, [a, b, c], z) == f(f(f(z, a), b), c)
     """
-    if xs:
-        result = function(acc, xs[0])
+    result = acc
+    for elem in xs:
+        result = function(result, elem)
 
-        for i in range(1, len(xs)):
-            result = function(result, xs[i])
-
-        return result
-    else:
-        return acc
+    return result
 
 
 def foldr(function, xs, acc):
     """
     Similar to foldl function but here we start from right and take 2 elements at a time.
-     
+
     For example:
-   
+
     foldr(f, [a, b, c], z) == f(a, f(b, f(c, z)))
     """
-    span = -(len(xs) + 1)
-    
-    if xs:
-        result = function(xs[-1], acc)
-        for i in range(-2, span, -1): # We run the list in the reverse direction.
-            result = function(xs[i], result)
-        return result
-    else:
-        return acc
+    xs_reversed = reverse(xs)  # We have defined this function in a basic way below.
+    print(xs_reversed)
+    result = acc
+
+    for elem in xs_reversed:
+        result = function(elem, acc)
+
+    return result
+    # span = -(len(xs) + 1)
+
+    # if xs:
+    #     result = function(xs[-1], acc)
+    #     for i in range(-2, span, -1):  # We run the list in the reverse direction.
+    #         result = function(xs[i], result)
+    #     return result
+    # else:
+    #     return acc
 
 
 def reverse(xs):
     """Returns the reverse of a list. """
-    if xs:
 
-        reversed_lst = [] # We'll store the reversed list here.
-        span = -(len(xs) + 1) # We run the list in the reverse direction. 
+    output = []
 
-        for i in range(-1, span, -1):
-            reversed_lst += [xs[i]]
-    
-        return reversed_lst 
-    else:
-        return []
+    for elem in xs:
+        output = [elem] + output
 
-
+    return output
