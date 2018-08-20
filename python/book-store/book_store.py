@@ -16,6 +16,7 @@ def calculate_total(books):
 
         print(counts)
         counts = [x for x in counts if x != 0]
+
         uniques = len(counts)
         total_cost += d[uniques]
         counts = [x - 1 if x > 0 else 0 for x in counts]
