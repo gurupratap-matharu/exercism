@@ -1,6 +1,0 @@
-"TERMCAP", line 20, col 1, terminal 'SC': Missing separator
-Veer:~/Exercism/python/book-store$ screen -list
-There is a screen on:
-	1390.ttys000.Veers-Macbook	(Attached)
-1 Socket in /tmp/screens/S-Veer.
-Veer:~/Exercism/python/book-store$ 
