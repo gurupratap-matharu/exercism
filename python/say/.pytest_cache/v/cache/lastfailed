@@ -1,0 +1,20 @@
+{
+  "say_test.py::SayTest::test_1002345": true,
+  "say_test.py::SayTest::test_987654321123": true,
+  "say_test.py::SayTest::test_eight_hundred_and_ten_thousand": true,
+  "say_test.py::SayTest::test_fourteen": true,
+  "say_test.py::SayTest::test_number_negative": true,
+  "say_test.py::SayTest::test_number_too_large": true,
+  "say_test.py::SayTest::test_one": true,
+  "say_test.py::SayTest::test_one_billion": true,
+  "say_test.py::SayTest::test_one_hundred": true,
+  "say_test.py::SayTest::test_one_hundred_twenty": true,
+  "say_test.py::SayTest::test_one_hundred_twenty_three": true,
+  "say_test.py::SayTest::test_one_million": true,
+  "say_test.py::SayTest::test_one_million_two": true,
+  "say_test.py::SayTest::test_one_thousand": true,
+  "say_test.py::SayTest::test_one_thousand_two_hundred_thirty_four": true,
+  "say_test.py::SayTest::test_twenty": true,
+  "say_test.py::SayTest::test_twenty_two": true,
+  "say_test.py::SayTest::test_zero": true
+}
