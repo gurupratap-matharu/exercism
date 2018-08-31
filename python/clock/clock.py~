@@ -1,12 +1,13 @@
 class Clock(object):
     def __init__(self, hour, minute):
         """
-        The constructor function of the class.
+        The constructor function of the class. 
         """
         x, self.hour = divmod(hour, 24)
         y, self.minute = divmod(minute, 60)
         self.hour += y
-
+        
+        
     def __repr__(self):
         """
         Returns the clock time as a string
@@ -18,11 +19,12 @@ class Clock(object):
 
     def __add__(self, minutes):
         """Add minutes to an existing clock."""
+        hours, minutes = divmod(minutes, 60)
+        self.hour += hours
+        self.minutes += minutes
+        print("Hour: ", self.hour)
+        print("Minutes: ", self.minutes)
 
+la
     def __sub__(self, minutes):
-        """Subtract minutes from an existing clock."""
-
-
-c1 = Clock(23, 59)
-
-print(c1)
+        pass
