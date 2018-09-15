@@ -4,9 +4,10 @@ class Clock(object):
         """
         The constructor function of the class.
         """
-        y, self.minute = divmod(minute, 60)
-        hour += y
-        x, self.hour = divmod(hour, 24)
+        total_minutes = (hour * 60) + minute
+        hour, minute = divmod(total_minutes, 60)
+        self.hour = hour % 24
+        self.minute = minute
 
     def __repr__(self):
         """
@@ -15,17 +16,20 @@ class Clock(object):
         return "{:02}:{:02}".format(self.hour, self.minute)
 
     def __eq__(self, other):
-        pass
+        """Checks if two clocks are equal. Returns a boolean value."""
+
+        return (self.hour, self.minute) == (other.hour, other.minute)
 
     def __add__(self, minutes):
         """Add minutes to an existing clock."""
-        added_minutes = self.minute + minutes
-        __init__(self, self.hour, added_minutes)
+        hour = self.hour
+        minute = self.minute + minutes
 
-        
+        return self.__class__(hour, minute)
+
     def __sub__(self, minutes):
         """Subtract minutes from an existing clock."""
-        pass
-#for i in range(0, 1000):
-    #print(Clock(23, i))
+        hour = self.hour
+        minute = self.minute - minutes
 
+        return self.__class__(hour, minute)
