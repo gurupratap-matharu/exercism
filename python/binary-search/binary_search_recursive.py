@@ -31,4 +31,4 @@ if __name__ == "__main__":
     lst = [1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634]
     number = 144
     print(binary_search_recursive(lst, number))
-    print("--- %.5s seconds ---" % (time.time() - start_time))
+    print("--- {:.5f} seconds ---".format(time.time() - start_time))
