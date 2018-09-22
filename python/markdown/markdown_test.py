@@ -66,8 +66,4 @@ class MarkdownTest(unittest.TestCase):
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
     unittest.main(exit=False)
-=======
-    unittest.main()
->>>>>>> 715ebcce52c03695993bff7dc2eeafb7d4687a4e
