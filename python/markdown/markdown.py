@@ -1,0 +1,111 @@
+
+# Import the regex module
+import re
+
+
+def parse_markdown(markdown):
+    """Converts markdown text to plain html syntax. Returns a string."""
+
+    lines = markdown.split('\n')
+    html = ''  # We'll store our converted html here.
+    in_list = False
+
+    h6_regex = '###### (.*)'
+    h2_regex = '## (.*)'
+    h1_regex = '# (.*)'
+    list_regex = r'\* (.*)'
+    bold_regex = '(.*)__(.*)__(.*)'
+    italic_regex = '(.*)_(.*)_(.*)'
+
+    # iterate through each line looking for patterns. Remember we split our Markdown with '\n' delimiter
+    for chunk in lines:
+        # first we look for heading syntax
+
+        if re.match(h6_regex, chunk) is not None:
+            chunk = '<h6>' + chunk[7:] + '</h6>'
+
+        elif re.match(h2_regex, chunk) is not None:
+            chunk = '<h2>' + chunk[3:] + '</h2>'
+
+        elif re.match(h1_regex, chunk) is not None:
+            chunk = '<h1>' + chunk[2:] + '</h1>'
+
+        unordered_list_items = re.match(r'\* (.*)', chunk)
+
+        # we check for <ul> items here
+        if unordered_list_items:
+
+            if not in_list:
+                in_list = True
+                is_bold = False
+                is_italic = False
+
+                # here we segregate the <li> items
+                ordered_list_items = unordered_list_items.group(1)
+
+                # to find 'bold' content
+                bold_match = re.match(bold_regex, ordered_list_items)
+
+                if bold_match:
+                    ordered_list_items = bold_match.group(1) + '<strong>' + \
+                        bold_match.group(2) + '</strong>' + bold_match.group(3)
+                    is_bold = True
+
+                # to find 'italic' content
+                italic_match = re.match(italic_regex, ordered_list_items)
+
+                if italic_match:
+                    ordered_list_items = italic_match.group(1) + '<em>' + italic_match.group(2) + '</em>' + italic_match.group(3)
+                    is_italic = True
+
+                chunk = '<ul><li>' + ordered_list_items + '</li>'
+
+            # this else section follows very identical construction as the 'if' section above.
+            # Most of the code is repeating and doesn't follow the DRY principle.
+
+            else:
+
+                is_bold = False
+                is_italic = False
+                ordered_list_items = unordered_list_items.group(1)
+                bold_match = re.match(bold_regex, ordered_list_items)
+
+                if bold_match:
+                    ordered_list_items = bold_match.group(1) + '<strong>' + bold_match.group(2) + '</strong>' + bold_match.group(3)
+                    is_bold = True
+
+                italic_match = re.match(italic_regex, ordered_list_items)
+                if italic_match:
+                    ordered_list_items = italic_match.group(1) + '<em>' + italic_match.group(2) + \
+                        '</em>' + italic_match.group(3)
+
+                    is_italic = True
+
+                chunk = '<li>' + ordered_list_items + '</li>'
+
+        else:
+            if in_list:
+                chunk += '</ul>'
+                in_list = False
+
+        paragraph_match = re.match('<h|<ul|<p|<li', chunk)
+
+        if not paragraph_match:
+            chunk = '<p>' + chunk + '</p>'
+
+        bold_match = re.match(bold_regex, chunk)
+
+        if bold_match:
+            chunk = bold_match.group(1) + '<strong>' + bold_match.group(2) + '</strong>' + bold_match.group(3)
+
+        italic_match = re.match(italic_regex, chunk)
+
+        if italic_match:
+            chunk = italic_match.group(1) + '<em>' + italic_match.group(2) + '</em>' + italic_match.group(3)
+
+        html += chunk
+
+    if in_list:
+        html += '</ul>'
+
+    return html
