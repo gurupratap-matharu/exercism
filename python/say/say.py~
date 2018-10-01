@@ -1,6 +1,4 @@
 import os
-
-# We store the verbal pronunciations here.
 pronunciations = [
     (0, 'zero'),
     (1, 'one'),
@@ -38,7 +36,7 @@ pronun = dict(pronunciations)
 def say(number):
     """
     Says the number out loud through the default say command of terminal.
-    Parses long numbers out systematically but has a limit to handle upto trillion and no more.
+    Parses long numbers out systematically but has a limit to handle uptil trillion and no more.
     """
     # n = ('{:,}'.format(number))
     # # os.system('say %s' % n)
