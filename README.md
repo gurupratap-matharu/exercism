@@ -1,1 +1,1 @@
-This repository contains all the Exercism problems attempted by me.
+This repository contains various Python projects implementing popular algorithms and data structures.
