@@ -1,0 +1,8 @@
+[
+  "test_acronym.py::AcronymTest::test_all_caps_words",
+  "test_acronym.py::AcronymTest::test_basic",
+  "test_acronym.py::AcronymTest::test_lowercase_words",
+  "test_acronym.py::AcronymTest::test_punctuation",
+  "test_acronym.py::AcronymTest::test_punctuation_without_whitespace",
+  "test_acronym.py::AcronymTest::test_very_long_abbreviation"
+]
