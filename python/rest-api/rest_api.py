@@ -225,18 +225,5 @@ class RestAPI(object):
         return {'users': [self.balance_person(a), 
                           self.balance_person(b)] }
 
-    def post(self, url, payload=None):
-=======
->>>>>>> 5146ad29d449757812f46c6cad1bb07ce7e929c3
-        """Post endpoint"""
-        payl = json.loads(payload)
-        if url == '/add':
-            answer = self.post_add(**payl)
-        if url == '/iou':
-            answer = self.post_iou(**payl)
-        # output as JSON string
-<<<<<<< HEAD
-        return json.dumps(answer)
-=======
-        return json.dumps(answer)
->>>>>>> 5146ad29d449757812f46c6cad1bb07ce7e929c3
+    
+
