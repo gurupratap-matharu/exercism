@@ -23,4 +23,25 @@ class SgfTree(object):
 
 
 def parse(input_string):
-    pass
+    """
+    Parses the Smart Game Format string
+    """
+    # check for null string
+    if len(input_string) == 0:
+        raise ValueError('Length of input string should be greater than zero!')
+
+    # check if tree exists
+    if input_string[0] != '(' and input_string[-1] != ')':
+        raise ValueError('No tree exists.')
+
+    input_string = input_string.strip('(').strip(')')
+    if input_string[0] != ';':
+        raise ValueError('A tree should have a node inside it!')
+    # input_string = input_string.replace
+    return input_string
+
+
+if __name__ == '__main__':
+    SGF = '(;A[B](;B[C])(;C[D]))'
+    RESULT = parse(input_string=SGF)
+    print(RESULT)
