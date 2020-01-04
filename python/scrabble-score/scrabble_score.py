@@ -1,25 +1,15 @@
-
 # First we store the scores for all the letters in a simple dictionary.
-SCORES = {
-    1: 'aeioulnrst',
-    2: 'dg',
-    3: 'bcmp',
-    4: 'fhvwy',
-    5: 'k',
-    8: 'jx',
-    10: 'qz',
-}
+SCORES = {'a': 1, 'b': 3, 'c': 3, 'd': 2,
+          'e': 1, 'f': 4, 'g': 2, 'h': 4,
+          'i': 1, 'j': 8, 'k': 5, 'l': 1,
+          'm': 3, 'n': 1, 'o': 1, 'p': 3,
+          'q': 10, 'r': 1, 's': 1, 't': 1,
+          'u': 1, 'v': 4, 'w': 4, 'x': 8,
+          'y': 4, 'z': 10}
 
 
 def score(word):
     """
     Calculates the score of a scrabble word irrespective of the case.
     """
-    total_score = 0
-
-    for char in word:
-        for key, values in SCORES.items():
-            if char.lower() in values:
-                total_score += key
-                break
-    return total_score
+    return sum([SCORES[char] for char in word.lower()])
