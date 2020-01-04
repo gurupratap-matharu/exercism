@@ -3,7 +3,7 @@ def is_isogram(string):
 
     string = string.lower()
 
-    lst = [char for char in list(string) if char in 'abcdefghijklmnopqrstuvwxyz']
+    lst = [char for char in list(string) if char.isalpha()]
     for char in lst:
         if lst.count(char) > 1:
             return False
