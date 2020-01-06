@@ -12,4 +12,4 @@ def score(word):
     """
     Calculates the score of a scrabble word irrespective of the case.
     """
-    return sum([SCORES[char] for char in word.lower()])
+    return sum(SCORES[char] for char in word.lower())
