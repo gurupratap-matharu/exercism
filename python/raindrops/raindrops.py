@@ -22,6 +22,3 @@ def convert(number):
 
     return raindrops
 
-
-if __name__ == '__main__':
-    print(convert(8))
