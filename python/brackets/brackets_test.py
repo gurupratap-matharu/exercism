@@ -26,3 +26,7 @@ class BracketsTests(unittest.TestCase):
 
     def test_tricky_invalid_string(self):
         self.assertFalse(are_brackets_matched('(((({{{{[[[[()]]]]}}}})))'))
+
+
+if __name__ == '__main__':
+    unittest.main()
