@@ -9,8 +9,8 @@
 
 ## Motivation 🎯
 
-- Improve coding skills by going solving problems on daily basis
-- Try different challenges like algorithms, data structes, recursion, iteration, stacks and what not!
+- Improve coding skills by solving problems on daily basis
+- Try different challenges like algorithms, data structures, recursion, iteration, stacks and what not!
 - Working with tools that are free for open source
 - Working with coding platforms and community challenges
 
@@ -29,4 +29,4 @@ Depends on the language. For eg for python it will be simply
 
 ## License
 
-MIT License ;D
+MIT License
