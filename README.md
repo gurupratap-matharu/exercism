@@ -1,7 +1,7 @@
 
 <h1 align="center">Just Code</h1>
 
-<img src="https://github.com/gurupratap-matharu/exercism/blob/assets/hero.jpg" alt="drawing" width="1920"/>
+<img src="https://github.com/gurupratap-matharu/exercism/blob/master/assets/hero.jpg" alt="drawing" width="1920"/>
 
 ## LIVE
 
