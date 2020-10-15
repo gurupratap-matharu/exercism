@@ -1,2 +1,32 @@
-This repository contains various Python projects implementing popular algorithms and data structures.
-The idea to get a strong understanding of computer science fundamentals.
+
+<h1 align="center">Just Code</h1>
+
+<img src="https://github.com/gurupratap-matharu/exercism/blob/assets/hero.jpg" alt="drawing" width="1920"/>
+
+## LIVE
+
+<https://gurupratap-matharu.github.io/exercism/>
+
+## Motivation 🎯
+
+- Improve coding skills by going solving problems on daily basis
+- Try different challenges like algorithms, data structes, recursion, iteration, stacks and what not!
+- Working with tools that are free for open source
+- Working with coding platforms and community challenges
+
+## Features ✨
+
+- Problems and solutions are language wise
+- Nice segregation for anyone who wants to add or remove solutions
+- Upgrading docs to show code in a documentation format
+
+## Development setup 🛠
+
+Steps to locally setup development after cloning the project.
+
+Depends on the language. For eg for python it will be simply
+``` python my_script.py ```
+
+## License
+
+MIT License ;D
