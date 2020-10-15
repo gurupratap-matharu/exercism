@@ -10,6 +10,9 @@ def are_brackets_matched(chunk):
     Tells us whether the chunk has all the brackets matched correctly.
     Returns a boolean.
     """
+    if not isinstance(chunk, str):
+        raise TypeError('Data should be in string format')
+
     stack = []
 
     for char in chunk:
@@ -36,7 +39,3 @@ def are_brackets_matched(chunk):
             continue
 
     return not stack
-
-
-if __name__ == '__main__':
-    assert are_brackets_matched('{{{{{}}}}}((())){()}') == True
