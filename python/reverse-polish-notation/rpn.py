@@ -44,7 +44,10 @@ def evaluate_rpn(data=None):
         else:
             print(char)
             continue
-    print(stack)
+
+    if data[-1] == 'p':
+        print(stack[0])
+
     return stack[0]
 
 
