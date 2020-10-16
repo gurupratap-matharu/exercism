@@ -21,9 +21,6 @@ def check_if_equal(text_1, text_2):
     Checks if two strings are equal after parsing them with rules
     of hash character.
     """
-    print(parse_text(text_1))
-    print(parse_text(text_2))
-
     return parse_text(text_1) == parse_text(text_2)
 
 
