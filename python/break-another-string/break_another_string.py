@@ -1,4 +1,4 @@
-"""A utility script to identify if a pair of strings can break each other or not."""
+"""An awesome utility script to identify if a pair of strings can break each other or not."""
 
 
 class Breaker:
