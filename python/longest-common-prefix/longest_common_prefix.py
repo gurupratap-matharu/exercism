@@ -12,10 +12,19 @@ class Solution:
         """
 
         prefix = []
+
         for tup in zip(*strs):
-            print(tup)
+            if len(set(tup)) == 1:
+                prefix.append(tup[0])
+            else:
+                break
+
+        return ''.join(prefix)
 
 
 if __name__ == '__main__':
     s = Solution()
     print(s.longestCommonPrefix(['flower', 'flow', 'florencia']))
+    print(s.longestCommonPrefix(['abc', 'abcd', 'abcde']))
+    print(s.longestCommonPrefix(['1', '1ab', '1abc']))
+    print(s.longestCommonPrefix(['abc', 'bcd', 'abc']))
