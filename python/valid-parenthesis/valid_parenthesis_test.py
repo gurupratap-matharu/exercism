@@ -28,3 +28,8 @@ class StringParserTests(unittest.TestCase):
 
     def test_large_invalid_string(self):
         self.assertFalse(StringParser().has_valid_brackets('{}[[[((([{[{]}])))]]]'))
+
+
+if __name__ == '__main__':
+    unittest.main()
+    
