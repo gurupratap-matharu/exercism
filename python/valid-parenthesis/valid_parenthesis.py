@@ -8,11 +8,32 @@ class StringParser:
         """
         Validates if all the brackets in the string are correctly paired.
         """
-        pass
+
+        stack = []
+        bracket_map = {
+            '}': '{',
+            ')': '(',
+            ']': '[',
+        }
+
+        for char in text:
+            if char in bracket_map:
+                # 1 closing bracket
+
+                if not stack or stack.pop() != bracket_map[char]:
+                    return False
+
+            else:
+                # 2 opening bracket
+                stack.append(char)
+
+        if stack:
+            return False
+        return True
 
 
 if __name__ == '__main__':
     parser = StringParser()
-    assert parser.has_valid_brackets('()[]{}'), True
-    assert parser.has_valid_brackets('({[]})'), True
-    assert parser.has_valid_brackets('({)'), False
+    # assert parser.has_valid_brackets('()[]{}'), True
+    # assert parser.has_valid_brackets('({[]})'), True
+    assert not parser.has_valid_brackets('({)')
