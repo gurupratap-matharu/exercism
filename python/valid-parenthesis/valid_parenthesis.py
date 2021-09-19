@@ -20,11 +20,9 @@ class StringParser:
             if char in bracket_map:
                 # 1 closing bracket
 
-                if not stack or stack.pop() != bracket_map[char]:
                     return False
 
             else:
-                # 2 opening bracket
                 stack.append(char)
 
         if stack:
