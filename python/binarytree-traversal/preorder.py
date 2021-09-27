@@ -15,7 +15,7 @@ class TreeNode:
 class Tree:
     """Exposes methods to traverse a binary tree in preorder fashion"""
 
-    def pre_order_recursive_traversal(self, root: Optional[TreeNode]) -> List[int]:
+    def preorder_recursive_traversal(self, root: Optional[TreeNode]) -> List[int]:
         """
         Traverses a binary tree in preorder fashion in a recursive manner.
         """
@@ -34,7 +34,7 @@ class Tree:
         self.recursive_helper(node.left, res)
         self.recursive_helper(node.right, res)
 
-    def pre_order_iterative_traversal(self, root: Optional[TreeNode]) -> List[int]:
+    def preorder_iterative_traversal(self, root: Optional[TreeNode]) -> List[int]:
         """
         Traverses a binary tree in preorder fashion using iterative method.
         """
@@ -57,5 +57,5 @@ if __name__ == "__main__":
     tree = Tree()
 
     root_node = TreeNode(1, right=TreeNode(2, left=TreeNode(3)))
-    assert tree.pre_order_recursive_traversal(root=root_node), [1, 2, 3]
-    assert tree.pre_order_iterative_traversal(root=root_node), [1, 2, 3]
+    assert tree.preorder_recursive_traversal(root=root_node), [1, 2, 3]
+    assert tree.preorder_iterative_traversal(root=root_node), [1, 2, 3]
