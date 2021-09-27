@@ -62,7 +62,7 @@ class TreeTests(unittest.TestCase):
         node_7 = TreeNode(7, right=node_21)
         root = TreeNode(100, left=node_7, right=node_77)
 
-        self.assertEqual(Tree().inorder_iterative_traversal(root=root), [7, 9, 21, 100, 49, 11, 77, 37, 17])
+        self.assertEqual(Tree().inorder_traversal(root=root), [7, 9, 21, 100, 49, 11, 77, 37, 17])
 
 
 if __name__ == '__main__':
