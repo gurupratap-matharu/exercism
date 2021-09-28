@@ -49,8 +49,9 @@ class Tree:
 
 
 if __name__ == "__main__":
-    tree_1 = TreeNode(1, left=TreeNode(2), right=TreeNode(3))
-    tree_2 = TreeNode(1, left=TreeNode(2), right=TreeNode(3))
+    tree_1 = TreeNode(1, left=TreeNode(1))
+    tree_2 = TreeNode(1, right=TreeNode(1))
 
     tree = Tree()
-    assert tree.is_same_tree(p=tree_1, q=tree_2), True
+    res = tree.is_same_tree(p=tree_1, q=tree_2)
+    print(res)
