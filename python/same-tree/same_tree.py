@@ -23,29 +23,13 @@ class Tree:
     def is_same_tree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
         """Determines if two binary trees are identical"""
 
-        tree_p = self.inorder_traverse(p)
-        tree_q = self.inorder_traverse(q)
-
-        return tree_p == tree_q
-
-    def inorder_traverse(self, root: Optional[TreeNode]) -> List[int]:
-        """Traverses a binary tree inorder fashion using iterative technique"""
-
-        res = []
-        stack = []
-        node = root
-
-        while stack or node:
-
-            if node:
-                stack.append(node)
-                node = node.left
-            else:
-                node = stack.pop()
-                res.append(node.val)
-                node = node.right
-
-        return res
+        if p and q:
+            return (
+                p.val == q.val
+                and self.is_same_tree(p.left, q.left)
+                and self.is_same_tree(p.right, q.right)
+            )
+        return p is q
 
 
 if __name__ == "__main__":
