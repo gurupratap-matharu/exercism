@@ -15,7 +15,9 @@ class SameTreeTests(unittest.TestCase):
         self.assertTrue(Tree().is_same_tree(p, q))
 
     def test_two_simple_and_identical_binary_trees(self):
-        self.fail()
+        tree_p = TreeNode(1)
+        tree_q = TreeNode(2)
+        self.assertTrue(Tree().is_same_tree(tree_p, tree_q))
 
     def test_two_simple_and_different_binary_trees(self):
         self.fail()
