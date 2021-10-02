@@ -7,8 +7,7 @@ class TreeMaxDepthTests(unittest.TestCase):
     """Test Suite to test max depth of various binary trees"""
 
     def test_depth_of_a_null_binary_tree(self):
-        node = TreeNode()
-        self.assertEqual(Tree().get_max_depth(root=node), 0)
+        self.assertEqual(Tree().get_max_depth(root=None), 0)
 
     def test_depth_of_a_single_node_binary_tree(self):
         node = TreeNode(1)
