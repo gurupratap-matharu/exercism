@@ -1,5 +1,7 @@
 """"Finds the maximum depth of a binary tree"""
 
+from typing import Optional
+
 
 class TreeNode:
     """Represents a node in a tree"""
@@ -16,7 +18,24 @@ class Tree:
     def get_max_depth(self, root: Optional[TreeNode]) -> int:
         """Returns the maximum depth of a binary tree"""
 
-        pass
+        node = root
+        stack = []
+        curr_depth = max_depth = 0
+
+        while stack or node:
+
+            if node:
+                stack.append(node)
+                node = node.left
+                curr_depth += 1
+                max_depth = max(curr_depth, max_depth)
+
+            else:
+                node = stack.pop()
+                node = node.right
+                curr_depth -= 1
+
+        return max_depth
 
 
 if __name__ == "__main__":
