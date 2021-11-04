@@ -1,3 +1,5 @@
+"""Script that exposes api for pacman game"""
+
 def eat_ghost(power_pellet_active, touching_ghost):
     """
 
@@ -15,7 +17,6 @@ def score(touching_power_pellet, touching_dot):
     :param touching_dot:  bool - is the player touching a dot?
     :return: bool
     """
-    
     return touching_power_pellet or touching_dot
 
 
