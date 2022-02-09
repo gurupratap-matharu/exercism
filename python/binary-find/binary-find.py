@@ -33,4 +33,4 @@ if __name__ == '__main__':
     assert utils.binary_search(nums=[1, 2, 3, 4, 5], target=6), -1
     assert utils.binary_search(nums=[-1, 0, 3, 5, 9, 12], target=9), 4
     print(utils.binary_search(nums=[-2, 0, 3, 5, 9, 12], target=13))
-    utils.binary_search(nums=[2, 5], target=5), 1
+    assert utils.binary_search(nums=[2, 5], target=5), 1
