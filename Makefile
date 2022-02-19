@@ -1,2 +1,2 @@
 clean:
-	find . | grep -E "(__pycache__|\.pyc|\.pyo)" | xargs rm -rf
+	find . | grep -E "(__pycache__|.pytest_cache|\.pyc|\.pyo)" | xargs rm -rf

@@ -1,7 +1,0 @@
-[
-  "diffie_hellman_test.py::DiffieHellmanTest::test_can_calculate_public_key_using_private_key",
-  "diffie_hellman_test.py::DiffieHellmanTest::test_can_calculate_secret_using_other_party_s_public_key",
-  "diffie_hellman_test.py::DiffieHellmanTest::test_key_exchange",
-  "diffie_hellman_test.py::DiffieHellmanTest::test_private_key_is_in_range",
-  "diffie_hellman_test.py::DiffieHellmanTest::test_private_key_is_random"
-]

@@ -1,5 +1,0 @@
-[
-  "test_leap.py::leapTest::test_year_divisible_by_100_but_not_divisible_by_400",
-  "test_leap.py::leapTest::test_year_divisible_by_4",
-  "test_leap.py::leapTest::test_year_divisible_by_400"
-]
